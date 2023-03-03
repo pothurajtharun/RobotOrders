@@ -10,6 +10,11 @@ Library             RPA.HTTP
 Library             RPA.Excel.Files
 Library             RPA.Tables
 Library             RPA.PDF
+Library             RPA.Archive
+
+
+*** Variables ***
+${folderPath}=      /Users/tharunpothuraj/Documents/QAM/RPA/Cert2/output/final
 
 
 *** Tasks ***
@@ -18,6 +23,7 @@ Order robots from RobotSpareBin Industries Inc
     Click on the popup ok button
     Download the csv file
     Get Orders
+    Archive the folder
     [Teardown]    Close the browser
 
 
@@ -80,3 +86,6 @@ Export the table as a PDF
 
 Close the browser
     Close Browser
+
+Archive the folder
+    Archive Folder With Zip    ${folderPath}    All_Files.zip
